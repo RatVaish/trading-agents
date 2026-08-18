@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Trading Agents{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/main.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="live-dot"></div>
+    <div class="logo">Trading<span>Agents</span></div>
+    <nav class="nav-pills">
+      <a href="/"        class="nav-pill {% block nav_total %}{% endblock %}">Total</a>
+      <a href="/detail"  class="nav-pill {% block nav_detail %}{% endblock %}">Detail</a>
+    </nav>
+  </div>
+  <div class="header-right">
+    <span class="srv-time" id="srv-time">--:-- UTC</span>
+    <select id="tz-select" title="Display timezone"
+      style="background:var(--card);border:1px solid var(--border);color:var(--text2);
+             font-family:'IBM Plex Mono',monospace;font-size:10px;padding:2px 6px;
+             border-radius:4px;cursor:pointer;outline:none">
+      <option value="-12">UTC-12</option>
+      <option value="-11">UTC-11</option>
+      <option value="-10">UTC-10</option>
+      <option value="-9">UTC-9</option>
+      <option value="-8">UTC-8</option>
+      <option value="-7">UTC-7</option>
+      <option value="-6">UTC-6</option>
+      <option value="-5">UTC-5 (EST)</option>
+      <option value="-4">UTC-4 (EDT)</option>
+      <option value="-3">UTC-3</option>
+      <option value="-2">UTC-2</option>
+      <option value="-1">UTC-1</option>
+      <option value="0" selected>UTC+0 (GMT)</option>
+      <option value="1">UTC+1 (BST)</option>
+      <option value="2">UTC+2</option>
+      <option value="3">UTC+3</option>
+      <option value="4">UTC+4</option>
+      <option value="5">UTC+5</option>
+      <option value="6">UTC+6</option>
+      <option value="7">UTC+7</option>
+      <option value="8">UTC+8</option>
+      <option value="9">UTC+9</option>
+      <option value="10">UTC+10</option>
+      <option value="11">UTC+11</option>
+      <option value="12">UTC+12</option>
+    </select>
+    <span class="refresh-lbl" id="refresh-lbl">30s</span>
+    <button class="icon-btn" id="theme-btn" title="Toggle theme">☀</button>
+  </div>
+</div>
+
+{% block content %}{% endblock %}
+
+<script src="/static/js/api.js"></script>
+{% block scripts %}{% endblock %}
+<script>
+  // Theme toggle
+  let _theme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', _theme);
+  document.getElementById('theme-btn').textContent = _theme === 'dark' ? '☀' : '☾';
+  document.getElementById('theme-btn').addEventListener('click', () => {
+    _theme = _theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', _theme);
+    localStorage.setItem('theme', _theme);
+    document.getElementById('theme-btn').textContent = _theme === 'dark' ? '☀' : '☾';
+    if (typeof onThemeChange === 'function') onThemeChange(_theme);
+  });
+
+  // Timezone selector — persisted in localStorage
+  const tzSelect = document.getElementById('tz-select');
+  const savedTz  = localStorage.getItem('tz_offset');
+  if (savedTz !== null) tzSelect.value = savedTz;
+  // Expose globally so api.js formatters can use it
+  window.TZ_OFFSET = parseInt(tzSelect.value, 10);
+  tzSelect.addEventListener('change', () => {
+    window.TZ_OFFSET = parseInt(tzSelect.value, 10);
+    localStorage.setItem('tz_offset', tzSelect.value);
+    // Rebuild chart so the time axis formatter picks up the new offset
+    if (typeof loadChart === 'function') loadChart();
+    // Also re-render text timestamps in the UI
+    if (typeof onThemeChange === 'function') onThemeChange();
+  });
+</script>
+</body>
+</html>

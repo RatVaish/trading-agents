@@ -1,0 +1,90 @@
+# ---------------------------------------------------------------------------
+# Secrets and credentials
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.env
+!.env.example
+!*.env.example
+
+vault/
+vaults/
+.vault/
+secrets/
+.secrets/
+credentials/
+.credentials/
+
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+id_rsa
+id_rsa.*
+*.gpg
+*.asc
+
+.aws/
+.gcloud/
+service-account*.json
+*-credentials.json
+*_credentials.json
+config/secrets.*
+config/local.*
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.python-version
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Node
+# ---------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---------------------------------------------------------------------------
+# Data, models, runtime artifacts
+# ---------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.parquet
+*.pkl
+*.joblib
+checkpoints/
+logs/
+*.log
+tmp/
+.cache/
+
+# ---------------------------------------------------------------------------
+# IDE and OS
+# ---------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

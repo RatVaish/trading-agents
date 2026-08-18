@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Detail — Trading Agents{% endblock %}
+{% block nav_detail %}active{% endblock %}
+{% block head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://unpkg.com/lightweight-charts@3.8.0/dist/lightweight-charts.standalone.production.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="page">
+
+  <!-- Agent tabs -->
+  <div class="agent-tabs" id="agent-tabs">
+    {% for k in agents %}
+    <div class="agent-tab {{ k }} {% if k == active_agent %}active{% endif %}"
+         data-agent="{{ k }}" onclick="switchAgent('{{ k }}')">
+      {{ meta[k].label }} · {{ meta[k].pair }}
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Agent detail panel -->
+  <div id="detail-root">
+    <div class="empty" style="padding:60px 0">Loading...</div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const ACTIVE_AGENT = '{{ active_agent }}';
+  const AGENT_SYMBOLS = {{ meta | tojson }};
+</script>
+<script src="/static/js/detail.js"></script>
+{% endblock %}

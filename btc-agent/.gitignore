@@ -1,0 +1,24 @@
+# Secrets
+config/.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Runtime — auto-generated, don't commit
+state.json
+logs/
+vault/trades/
+vault/reports/
+
+# Keep vault structure but not contents
+!vault/trades/.gitkeep
+!vault/reports/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,195 @@
+{
+  "balance": 194.64,
+  "peak_balance": 194.86,
+  "positions": {
+    "SPY": {
+      "symbol": "SPY",
+      "side": "LONG",
+      "entry_price": 772.8,
+      "entry_value_usd": 29.229,
+      "notional_usd": 58.46,
+      "leverage": 2,
+      "size_pct": 0.15,
+      "opened_at": "2026-08-17T19:55:10.907626+00:00",
+      "stop_loss_price": 749.616,
+      "alpaca_order_id": "49c60440-cdbb-4a6f-a37f-aacbe2f1e9f0"
+    },
+    "NVDA": null,
+    "TSLA": null,
+    "MSFT": null,
+    "AAPL": null
+  },
+  "trading_paused": false,
+  "total_trades": 192,
+  "triggers": {
+    "SPY": [],
+    "AAPL": [],
+    "MSFT": [],
+    "NVDA": [],
+    "TSLA": []
+  },
+  "cycle_count": 7599,
+  "context_refresh_cycles": {
+    "vix": 7597,
+    "spy": 7599,
+    "sectors": 7597,
+    "earnings": 7561,
+    "news": 7597
+  },
+  "market_context": {
+    "vix": 15.72,
+    "vix_regime": "normal",
+    "spy_price": null,
+    "spy_open": null,
+    "spy_change_pct": null,
+    "spy_trend": null,
+    "spy_intraday_range": null,
+    "risk_sentiment": "unavailable",
+    "sector_tech": null,
+    "sector_financials": null,
+    "sector_energy": null,
+    "sector_healthcare": null,
+    "earnings": {
+      "earnings_mentions": [],
+      "source": "wsj_rss"
+    },
+    "news": {
+      "headlines": [
+        {
+          "title": "An A.I. Tax Boom Could Curtail America\u2019s Debt. But Not Solve It.",
+          "published": "Tue, 18 Aug 2026 17:37:04 +0000",
+          "source": "nytimes",
+          "watchlist_mentions": []
+        },
+        {
+          "title": "Bond Sell-Off Sends Borrowing Costs to Highest Level Since 2007",
+          "published": "Tue, 18 Aug 2026 17:34:11 +0000",
+          "source": "nytimes",
+          "watchlist_mentions": []
+        },
+        {
+          "title": "Two Ships Passing Through the Strait of Hormuz Are Attacked",
+          "published": "Tue, 18 Aug 2026 16:56:21 +0000",
+          "source": "nytimes",
+          "watchlist_mentions": []
+        },
+        {
+          "title": "Sugar Importer With Trump Ties Said to Maintain Abusive Labor Practices",
+          "published": "Tue, 18 Aug 2026 15:11:55 +0000",
+          "source": "nytimes",
+          "watchlist_mentions": []
+        },
+        {
+          "title": "Gulf Oil Giants Push to Expand Overseas Stockpiles as Iran War Drags On",
+          "published": "Tue, 18 Aug 2026 14:03:33 +0000",
+          "source": "nytimes",
+          "watchlist_mentions": []
+        },
+        {
+          "title": "Home Depot Reports Higher Sales, but Its C.E.O. Isn\u2019t There to Spread the News",
+          "published": "Tue, 18 Aug 2026 13:47:00 +0000",
+          "source": "nytimes",
+          "watchlist_mentions": []
+        },
+        {
+          "title": "ABC Sues Trump Administration Over F.C.C. Threat to Its TV Licenses",
+          "published": "Tue, 18 Aug 2026 12:53:15 +0000",
+          "source": "nytimes",
+          "watchlist_mentions": []
+        },
+        {
+          "title": "Is Silicon Valley in the Justice Dept.\u2019s Sights?",
+          "published": "Tue, 18 Aug 2026 12:22:43 +0000",
+          "source": "nytimes",
+          "watchlist_mentions": []
+        }
+      ],
+      "source": "nytimes"
+    },
+    "context_updated_at": "2026-08-18T18:15:02.667744+00:00"
+  },
+  "last_indicators": {
+    "SPY": {
+      "price": 768.01,
+      "price_change_pct": 0.0717,
+      "rsi": 35.27,
+      "macd": -0.226227,
+      "macd_signal": -0.177593,
+      "macd_hist": -0.048634,
+      "macd_cross_up": false,
+      "macd_cross_down": false,
+      "bb_upper": 769.0523,
+      "bb_mid": 768.2705,
+      "bb_lower": 767.4887,
+      "bb_pct": 0.3334,
+      "vol_spike": true,
+      "vol_ratio": 2.29
+    },
+    "AAPL": {
+      "price": 310.5,
+      "price_change_pct": 0.0725,
+      "rsi": 47.97,
+      "macd": 0.066422,
+      "macd_signal": 0.117278,
+      "macd_hist": -0.050855,
+      "macd_cross_up": false,
+      "macd_cross_down": false,
+      "bb_upper": 310.8623,
+      "bb_mid": 310.3777,
+      "bb_lower": 309.8932,
+      "bb_pct": 0.6261,
+      "vol_spike": false,
+      "vol_ratio": 1.06
+    },
+    "MSFT": {
+      "price": 482.05,
+      "price_change_pct": -0.0415,
+      "rsi": 59.11,
+      "macd": 0.077733,
+      "macd_signal": 0.060027,
+      "macd_hist": 0.017706,
+      "macd_cross_up": false,
+      "macd_cross_down": false,
+      "bb_upper": 482.2497,
+      "bb_mid": 481.8623,
+      "bb_lower": 481.4748,
+      "bb_pct": 0.7423,
+      "vol_spike": false,
+      "vol_ratio": 0.82
+    },
+    "NVDA": {
+      "price": 219.61,
+      "price_change_pct": 0.0957,
+      "rsi": 34.86,
+      "macd": -0.097964,
+      "macd_signal": -0.039723,
+      "macd_hist": -0.058242,
+      "macd_cross_up": false,
+      "macd_cross_down": false,
+      "bb_upper": 220.6143,
+      "bb_mid": 220.092,
+      "bb_lower": 219.5697,
+      "bb_pct": 0.0386,
+      "vol_spike": false,
+      "vol_ratio": 1.35
+    },
+    "TSLA": {
+      "price": 336.65,
+      "price_change_pct": 0.1756,
+      "rsi": 27.78,
+      "macd": -0.4531,
+      "macd_signal": -0.295312,
+      "macd_hist": -0.157789,
+      "macd_cross_up": false,
+      "macd_cross_down": false,
+      "bb_upper": 340.0423,
+      "bb_mid": 337.6055,
+      "bb_lower": 335.1687,
+      "bb_pct": 0.3039,
+      "vol_spike": false,
+      "vol_ratio": 1.35
+    }
+  },
+  "last_checked": "2026-08-18T18:15:05.285501+00:00",
+  "last_brain_call": "2026-08-18T18:15:05.296108+00:00"
+}

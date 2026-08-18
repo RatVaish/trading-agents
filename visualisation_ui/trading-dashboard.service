@@ -1,0 +1,14 @@
+[Unit]
+Description=Trading Agents Dashboard
+After=network.target
+
+[Service]
+Type=simple
+User=ratul
+WorkingDirectory=/home/ratul/projects/trading-agents/visualisation_ui
+ExecStart=/home/ratul/projects/trading-agents/visualisation_ui/venv/bin/python app.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
