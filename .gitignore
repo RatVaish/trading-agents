@@ -88,3 +88,6 @@ tmp/
 *.swp
 .DS_Store
 Thumbs.db
+
+# Per-agent runtime state
+state.json
